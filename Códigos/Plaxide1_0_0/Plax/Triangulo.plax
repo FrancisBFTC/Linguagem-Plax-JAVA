@@ -1,0 +1,18 @@
+#output : gui.
+#dynamic : 2 => 'C:\\Users\\Casa-pc\\Desktop\\Plax\\images\\plaxDyn.jpg'.
+*Var
+$EndVar
+Start
+	dynamic[2 => effect : paint['black', 2]].
+		goto[0 , 200 => 10].
+		goto[100 , 200 => 10].
+		paint['green', 2].
+		goto[200 , 100 => 80].
+		goto[300 , 200 => 80].
+		goto[100 , 200 => 25].
+		paint['black', 2].
+		goto[0 , 200 => 25].
+		pic['C:\\Users\\Casa-pc\\Desktop\\Plax\\images\\Triangulo.jpg'].
+	endDynamic
+%
+Final

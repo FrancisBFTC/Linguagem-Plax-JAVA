@@ -1,0 +1,8 @@
+*Exemplo de ola mundo em plax
+
+Var
+
+EndVar
+Start
+	sis[ola mundo].
+Final

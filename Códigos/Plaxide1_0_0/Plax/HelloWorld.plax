@@ -1,0 +1,57 @@
+#output : gui.
+#link : 1 => cliente-interface.
+*Var
+	@a1 : getFile[].
+$EndVar
+Start
+	sis[#######################################].bl
+	sis[Este programa e o "(@a1)"].bl
+	sis[#######################################].bl
+	bl
+	module['Cadastro', 1].
+	
+	if[button['Botao-cadastro'] -is- true].
+		@c0 : get[InputText['Campo1']].
+		@c1 : get[InputText['Campo2']].
+		@c2 : get[InputText['Campo3']].
+		@t0 : 'true'.
+		if[@c0 -is-].
+			sis[color:red{O primeiro campo esta vazio!}].bl
+			@t0 : 'false'.
+		endIf
+		
+		if[@c1 -is-].
+			sis[color:red{O segundo campo esta vazio!}].bl
+			@t0 : 'false'.
+		endIf
+		
+		if[@c2 -is-].
+			sis[color:red{O terceiro campo esta vazio!}].bl
+			@t0 : 'false'.
+		endIf
+		
+		if[@t0 -is- true].
+			if[@c1 -is- @c2].
+				@f1 : fix[@c0].
+				@f2 : fix[@c1].
+				sis[color:green{***Cadastro efetuado com sucesso!***}].bl
+				@b1 : capFix[@f1].
+				@b2 : capFix[@f2].
+				bl
+				sis[Usuario = (@b1)].bl
+				sis[Senha = (@b2)].bl
+				prompt[start C:\Users\Casa-Pc\Desktop\Plax\cliente-login.plax].
+			endIf
+			else
+				sis[color:red{As senhas nao sao iguais}].bl
+				sis[color:red{***O cadastro nao foi efetuado!***}].bl
+				prompt[start C:\Users\Casa-pc\Desktop\taskkill.lnk].
+			endElse
+		endIf
+		else
+		endElse
+		
+			
+	endIf
+%
+Final

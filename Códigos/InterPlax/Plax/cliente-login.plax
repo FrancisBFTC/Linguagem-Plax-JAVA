@@ -1,0 +1,48 @@
+#output : gui.
+#link : 1 => cliente-interface.
+#link : 2 => user-contas.
+*Var
+	@a1 : getFile[].
+$EndVar
+Start
+	sis[#######################################].bl
+	sis[Este programa e o "(@a1)"].bl
+	sis[#######################################].bl
+	bl
+	module['User', 2].
+	module['Login', 1].
+	if[button['Botao-login'] -is- true].
+		@z5 : 'true'.
+		@z1 : capFix[@f1].
+		@z2 : capFix[@f2].
+		@z3 : get[InputText['Campo4']].
+		@z4 : get[InputText['Campo5']].
+		if[@z1 -is- @z3].
+		endIf
+		else	
+			sis[color:red{Usuario Incorreto!}].bl
+			@z5 : 'false'.
+		endElse
+		
+		if[@z2 -is- @z4].
+		endIf
+		else
+			sis[color:red{Senha Incorreta!}].bl
+			@z5 : 'false'.
+		endElse
+		
+		if[@z5 -is- true].
+			sis[color:green{Login Efetuado com sucesso!}].bl
+			module['Conta', 1].
+		endIf
+		else
+			sis[color:red{Login Incorreto!}].bl
+			prompt[start C:\Users\Casa-Pc\Desktop\taskkill.lnk].
+		endElse
+	
+	endIf
+	else
+		sis[color:red{faca o login clicando no botao "Entrar"}].
+	endElse
+%
+Final

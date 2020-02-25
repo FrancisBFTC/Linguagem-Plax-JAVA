@@ -1,0 +1,47 @@
+#output : console.
+#link : 1 => cons-interface.
+#dynamic : 1 => 'C:\\Users\\Casa-Pc\\Desktop\\plaxDyn.jpg'.
+*Var
+
+$EndVar
+Start
+	@t1 : getTime[].
+		dynamic[1 => effect : paint['black']].
+			goto[0 , 100].
+			goto[95 , 100].
+			paint['green'].
+			goto[100 , 300].
+			paint['blue'].
+			goto[300 , 300].
+			paint['white'].
+			goto[300 , 100].
+			paint['red'].
+			goto[100 , 100].
+			paint['yellow'].
+			goto[300 , 300 => 25].
+			paint['#aaaaff'].
+			goto[200 , 200 => 25].
+			paint['#bbccbb'].
+			goto[300 , 100 => 25].
+			paint['gray'].
+			goto[100 , 300 => 25].
+			paint['#eeaaee'].
+			goto[200 , 200 => 25].
+			paint['#eeffaa'].
+			goto[110 , 100 => 25].
+			paint['#ffaaaa'].
+			goto[0 , 100 => 25].
+			pic['C:\\Users\\Casa-Pc\\Desktop\\QuadWithColors1.jpg'].
+		endDynamic
+	@t2 : getTime[].
+	@t3 : [@t2 - @t1].
+	sis[O tempo do Desenho foi em "(@t3)" milesimos].bl
+	prompt[start C:\\Users\\Casa-Pc\\Desktop\\QuadWithColors1.jpg].
+	@a1 : 0.
+		while[@a1 < 500].
+			@a1 : [@a1 + 1].
+		endWhile
+	prompt[taskkill -f -im javaw.exe].
+
+%
+Final
