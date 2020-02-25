@@ -1,0 +1,2 @@
+# Linguagem-Plax-JAVA
+Plax é uma linguagem que está sendo desenvolvida em Java para desenvolver diversos tipos de sistemas - Desde para android, desktop, internet, placas arduino,,etc.. O intuito do Plax é programar criando sistemas de baixo nível e alto nível o que o torna : Multi-nível. Executar softwares em várias plataformas utilizando o interpretador Plax(InterPlax), dando uma maior portabilidade (Multi-Plataforma). 
